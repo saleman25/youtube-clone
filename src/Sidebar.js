@@ -11,22 +11,20 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 
+
 function Sidebar() {
   return (
     <div className="sidebar">
       <SidebarRow selected Icon={HomeIcon} title="Home" />
       <SidebarRow Icon={WhatshotIcon} title="Trending" />
       <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
-
       <hr></hr>
-
-      <Sidebar Icon={VideoLibraryIcon} title="Library" />
-      <Sidebar Icon={HistoryIcon} title="History" />
-      <Sidebar Icon={OndemandVideoIcon} title="Your Videos" />
-      <Sidebar Icon={WatchLaterIcon} title="Watch Later" />
-      <Sidebar Icon={ThumbUpAltOutlinedIcon} title="Liked Videos" />
-      <Sidebar Icon={ExpandMoreOutlinedIcon} title="Show More" />
-
+      <SidebarRow Icon={VideoLibraryIcon} title="Library" />
+      <SidebarRow Icon={HistoryIcon} title="History" />
+      <SidebarRow Icon={OndemandVideoIcon} title="Your Videos" />
+      <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
+      <SidebarRow Icon={ThumbUpAltOutlinedIcon} title="Liked Videos" />
+      <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show More" />
       <hr></hr>
     </div>
   );
