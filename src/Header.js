@@ -7,10 +7,28 @@ import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 
 function Header() {
 
-    const [inputSearch, setInputSearch] = useState('');
+    const [{}, dispatch] = useStateValue();
+    const [input, setInput] = useState('');
+    const history = useHistory();
+
+    const search = (e) => {
+        e.preventDefault();
+
+        console.log("You inputted: ", input)
+
+        dispatch({
+            type: actionTypes.SET_SEARCH_TERM,
+            term: input
+        })
+
+        history.push('/search')
+    };
 
 
 
@@ -25,8 +43,8 @@ function Header() {
             </div>
 
             <div className='header_input'>
-            <input onChange={e => setInputSearch(e.target.value)} value={inputSearch} placeholder='Search' type='text'></input>
-            <Link to={`/search/${inputSearch}`}>
+            <input onChange={e => setInput(e.target.value)} value={input} placeholder='Search' type='text'></input>
+            <Link to={`/search/${input}`}>
             <SearchIcon className='header_inputButton'/>
             </Link>
             </div>
