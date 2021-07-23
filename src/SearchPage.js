@@ -3,16 +3,17 @@ import "./SearchPage.css";
 import TuneOutlinedIcon from "@material-ui/icons/TuneOutlined";
 import ChannelRow from "./ChannelRow";
 import VideoRow from "./VideoRow";
-import { useStateValue } from "./StateProvider";
-import useYoutube from "./useYoutube";
+// import { useStateValue } from "./StateProvider";
+// import useYoutube from "./useYoutube";
+// import { connect } from 'react-redux';
 
 function SearchPage() {
 
-    const [{ term }, dispatch] = useStateValue();
-    const { data } = useYoutube(term);
+    // const [{ term }, dispatch] = useStateValue();
+    // const { data } = useYoutube(term);
   
-    //   const data = Response;
-    console.log(data);
+    // //   const data = Response;
+    // console.log(data);
 
 
   return (
@@ -43,8 +44,19 @@ function SearchPage() {
         title="Yoga To Feel Your Best || Yoga With Adriene"
         image="https://i.ytimg.com/an_webp/BPK9WNtpBgk/mqdefault_6s.webp?du=3000&sqp=CLzdyIcG&rs=AOn4CLAK0wq06AyDSSx2Vdr7FlEUJ6Zfww"
       />
+
+
+
+
     </div>
   );
 }
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         useYoutube: () => dispatch(useYoutube()),
+//         dispatch,
+//     }
+// }
 
 export default SearchPage;
